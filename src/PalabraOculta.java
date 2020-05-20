@@ -11,9 +11,10 @@ public class PalabraOculta {
 	 */
 	public void desmembrar(String p) {
 		this.palabraAdivinar = new char[p.length()];
+		this.letraAdivinada = new char[p.length()];
 
 		for (int i = 0; i < p.length(); i++) {
-			this.palabraAdivinar[i] = p.charAt(i);
+			this.letraAdivinada[i] = p.charAt(i);
 			this.palabraAdivinar[i] = '_';
 		}
 	}

@@ -28,7 +28,6 @@ public class Tab extends JFrame {
 	private JTextField textFieldLetra;
 	private JButton btnProbar;
 	private JLabel lblMostrar;
-	private JTextField coso;
 
 	// VARIABLES DE JUEGO ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
 
@@ -64,8 +63,7 @@ public class Tab extends JFrame {
 		JButton btnNewButton = new JButton("Guardar");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-//				String po = passwordField.getText();
-				String po = coso.getText();
+				String po = passwordField.getText();
 				System.out.println(po);
 				palabra.setPalabra(po);
 			}
@@ -100,7 +98,8 @@ public class Tab extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				String l = textFieldLetra.getText();
 				String adivinado = palabra.verificarLetras(l.charAt(0));
-				
+				textFieldLetra.setText("");
+				textFieldLetra.requestFocus();
 				lblMostrar.setText(adivinado);
 			}
 		});
@@ -111,11 +110,6 @@ public class Tab extends JFrame {
 		lblMostrar.setFont(new Font("Roboto", Font.BOLD, 14));
 		lblMostrar.setBounds(10, 240, 412, 31);
 		contentPane.add(lblMostrar);
-		
-		coso = new JTextField();
-		coso.setBounds(395, 182, 86, 20);
-		contentPane.add(coso);
-		coso.setColumns(10);
 	}
 
 }
